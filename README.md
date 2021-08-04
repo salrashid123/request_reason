@@ -16,7 +16,25 @@ Simply send the metadata string with the hidden  `X-Goog-Request-Reason` header
 
   thats is.  Just use that header which isn't documented anywhere.
 
-Infact, Cloud libraries already supports that parameter
+Infact, Cloud libraries, gcloud cli and even Terraform already supports that parameter
+
+For gcloud its an environment variable or config value
+
+```bash
+$ export CLOUDSDK_CORE_REQUEST_REASON="fooo"
+# or
+$ gcloud config set core/request_reason foo
+
+# then
+$ gcloud secrets versions access 1 --secret="dbpassword"
+```
+
+for terraform, its just an env var (i'll file a feature request for terraform to get this in as a module parameter..)
+
+```bash
+$ export CLOUDSDK_CORE_REQUEST_REASON="fooo"
+$ terraform apply
+```
 
 In golang, when you initialize the client, simply define [option.WithRequestReason()](https://godoc.org/google.golang.org/api/option#WithRequestReason):
 

@@ -15,6 +15,10 @@ import (
 	"google.golang.org/api/option"
 )
 
+const (
+	CLOUDSDK_CORE_REQUEST_REASON_ENV_VAR = "CLOUDSDK_CORE_REQUEST_REASON"
+)
+
 var (
 	projectID = "mineral-minutia-820"
 	bucket    = "mineral-minutia-820-bucket"
