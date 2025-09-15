@@ -16,6 +16,9 @@ Simply send the metadata string with the hidden  `X-Goog-Request-Reason` header
 
   thats is.  Just use that header which isn't documented anywhere.
 
+***WARNING YMMV*** not all services honor propagating this field to logs...eg, GKE and Cloud Asset Inventory calls don't
+  
+
 Infact, Cloud libraries, gcloud cli and even Terraform already supports that parameter
 
 For gcloud its an environment variable or config value
